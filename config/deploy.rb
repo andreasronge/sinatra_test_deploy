@@ -6,16 +6,16 @@ set :rvm_ruby_string, 'jruby-1.5.5'        # Or whatever env you want it to run 
 set :rvm_type, :user
 
 set :application, "goodcred"
-set :repository,  "git@codebasehq.com:ambadoo/rails/server.git"
+set :repository,  "git://github.com/andreasronge/sinatra_test_deploy.git"
 set :scm, :git
-set :scm_username, "ambadoo"
+#set :scm_username, "andreas"
 set :branch, "master"
 
 set :environment, "production" #development" #production"
-set :deploy_to, "/home/ambadoo/cap-deploy"
-set :user, 'ambadoo'
+set :deploy_to, "/home/ubuntu/cap-deploy"
+set :user, 'ubuntu'
 set :use_sudo, :false
-server "109.123.107.175", :app
+server "goodcred.dyndns.org", :app
 
 namespace :deploy do
   desc "Start Tomcat from a shutdown state"
