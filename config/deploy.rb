@@ -32,7 +32,7 @@ namespace :deploy do
   task :start do
     run "rm -f #{current_path}/log/*"
     #trinidad -e production --load daemon --daemonize ./trinidad.pid
-    run "trinidad -r #{current_path}/config.ru -e #{environment} --threadsafe -d #{current_path}  --load daemon --daemonize #{current_path}/tmp/pids/#{application}"
+    run "trinidad -r #{current_path}/config.ru --threadsafe -d #{current_path}  --load daemon --daemonize #{current_path}/tmp/pids/#{application}"
   end
 
   desc "Restarts a server running Tomcat"
