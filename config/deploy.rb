@@ -30,9 +30,9 @@ namespace :deploy do
 
   desc "Starts the Tomcat server"
   task :start do
-    run "rm -f #{current_path}/log/*"
+    run "rm -rf #{current_path}/log"
     #trinidad -e production --load daemon --daemonize ./trinidad.pid
-    run "trinidad -r #{current_path}/config.ru --threadsafe -d #{current_path}  --load daemon --daemonize #{current_path}/tmp/pids/#{application}"
+    run "cd #{current_path}; trinidad -r config.ru --threadsafe -d #{current_path}  --load daemon --daemonize #{current_path}/tmp/pids/#{application}"
   end
 
   desc "Restarts a server running Tomcat"
